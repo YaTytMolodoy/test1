@@ -1,0 +1,37 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px black;
+  height: 80px;
+  align-items: center;
+  padding: 12px 70px 0 70px;
+}
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.logo {
+  cursor: pointer;
+}
+@media (max-width: 800px) {
+  .header {
+    padding: 0 50px;
+  }
+  .buttons {
+    width: 230px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 12px 10px 0 10px;
+  }
+  .buttons {
+    width: 206px;
+    gap: 0px;
+  }
+}

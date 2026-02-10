@@ -1,0 +1,69 @@
+@font-face {
+  font-family: "OpenSans";
+  src: url("@/assets/font/OpenSans-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("@/assets/font/Montserrat-Medium.ttf") format("truetype");
+}
+.buttonContact {
+  color: #737373;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.2px;
+  font-family: "OpenSans";
+  width: 95px;
+
+  background-color: white;
+  border: none;
+  height: 44px;
+}
+.buttonUnfilledHeader {
+  color: #ff685b;
+  font-family: "Montserrat";
+  width: 186px;
+  font-size: 20px;
+
+  border-radius: 7px;
+  letter-spacing: 0;
+  background-color: white;
+  border: solid #ff685b;
+  height: 40px;
+}
+//////
+.buttonUnfilled {
+  color: #ff685b;
+  font-family: "Montserrat";
+  font-weight: 700;
+  width: 155px;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  border-radius: 5px;
+  background-color: white;
+  border: solid #ff685b;
+  height: 52px;
+}
+.buttonFilled {
+  color: white;
+  font-family: "Montserrat";
+  font-weight: 700;
+
+  width: 128px;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  border-radius: 5px;
+  background-color: #ff685b;
+  border: none;
+  height: 52px;
+}
+.buttonContact,
+.buttonUnfilledHeader,
+.buttonUnfilled,
+.buttonFilled {
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  .buttonUnfilledHeader {
+    width: 106px;
+  }
+}

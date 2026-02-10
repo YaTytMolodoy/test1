@@ -1,0 +1,67 @@
+.container {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 0 120px;
+  display: flex;
+  justify-self: center;
+  flex-direction: column;
+}
+.title {
+  padding: 38px 0;
+  max-width: 728px;
+  display: block;
+}
+.homePage {
+  padding: 0 70px;
+}
+.buttons {
+  display: flex;
+  gap: 10px;
+  width: 293px;
+}
+.cardList {
+  margin-top: 100px;
+  display: flex;
+  gap: 30px;
+  flex: 0 1 329px;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+.Card {
+  flex-direction: column;
+  display: flex;
+  max-width: 329px;
+  padding: 40px;
+  min-width: 329px;
+  box-sizing: border-box;
+
+  width: 329px;
+  height: 248px;
+  gap: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+.iconCard {
+  width: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 72px;
+  border-radius: 50%;
+  background-color: #e74040;
+}
+.underline {
+  width: 60px;
+  height: 4px;
+  background: #e74040;
+  border-radius: 2px;
+}
+@media (max-width: 600px) {
+  .homePage {
+    padding: 0 10px;
+  }
+  .container {
+    padding: 0 0;
+  }
+}

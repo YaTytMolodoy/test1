@@ -1,0 +1,16 @@
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-self: end;
+  gap: 10px;
+}
+.buttonFilled {
+  width: 100px;
+  font-size: 12px;
+  height: 40px;
+}
+.buttonUnfilled {
+  width: 100px;
+  font-size: 12px;
+  height: 40px;
+}

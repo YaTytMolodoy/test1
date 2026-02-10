@@ -1,0 +1,46 @@
+.profilePage {
+  padding: 0 70px;
+  width: 100%;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 120px 127px;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-self: center;
+  flex-direction: column;
+}
+.title {
+  padding: 38px 0;
+  max-width: 728px;
+  display: flex;
+  flex-direction: column;
+}
+.buttonFilled {
+  width: 228px;
+}
+.buttonUnfilled {
+  width: 239px;
+}
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+@media (max-width: 800px) {
+  .profilePage {
+    padding: 0 10px;
+  }
+  .container {
+    padding: 0;
+  }
+}
+@media (max-width: 600px) {
+  .buttonUnfilled {
+    width: 155px;
+  }
+  .buttonFilled {
+    width: 128px;
+  }
+}
