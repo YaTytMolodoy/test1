@@ -31,7 +31,7 @@ export const FormAuth: React.FC = () => {
         onSubmit={(e) => {
           e.preventDefault();
 
-          console.log("Форма отправлена без перезагрузки");
+ 
         }}
       >
         <div className={style.formItem}>
