@@ -1,48 +1,5 @@
-const Users = [
-  {
-    name: "Даниил Барсук",
-    login: "tabachnik",
-    password: "qwerty123",
-    token:
-      "AdshbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhbGV4MTIzIiwibmFtZSI6IkFsZXhleSIsImlhdCI6MTc0MTk4NzIwMCwiZXhwIjoyMDMwMDAwMDAwfQ.fakeSignature123",
-  },
-  {
-    name: "Алексей Иванов",
-    login: "alex123",
-    password: "passAlex2026",
-    token:
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhbGV4MTIzIiwibmFtZSI6IkFsZXhleSIsImlhdCI6MTc0MTk4NzIwMCwiZXhwIjoyMDMwMDAwMDAwfQ.fakeSignature123",
-  },
-  {
-    name: "Мария Соколова",
-    login: "mariasok",
-    password: "Maria!qwe789",
-    token:
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtYXJpYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQxOTg3MzAwLCJleHAiOjE3NDIwNzM3MDB9.mockToken456789",
-  },
-  {
-    name: "Дмитрий Ковалёв",
-    login: "dkovalev2026",
-    password: "Dm!tr!y_2026",
-    token:
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImQua292YWxldiIsImlhdCI6MTc0MTk4NzQwMCwiZXhwIjoyMDMwMDAwMDAwfQ.testSig987",
-  },
-  {
-    name: "Ольга Петренко",
-    login: "olgapetr",
-    password: "OlgaTest2026!",
-    token:
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvbGdhIiwibmFtZSI6Ik9sZ2EgUGV0cmVuayIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MTk4NzYwMCwiZXhwIjoyMDMwMDAwMDAwfQ.fakeAdminToken",
-  },
-  {
-    name: "Сергей",
-    login: "sergmoroz",
-    password: "S3rg3y_M0r0z",
-    token:
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1LCJsb2dpbiI6InNlcmdfbW9yb3oiLCJpYXQiOjE3NDE5ODc4MDAsImV4cCI6MTc0MjA3NDIwMH0.mockSignature321",
-  },
-];
-
+import axios from "axios";
+const API = "https://698ef2b0aded595c253348ef.mockapi.io";
 export async function authUserRp(
   login: string,
   password: string,
@@ -88,21 +45,19 @@ export async function getUserRp(token: string) {
   }
 }
 
-//
+/// Все что ниже должно происходить со стороны backend и пароли хранятся на сервере
 export async function signInLoginPassword(login: string, password: string) {
-  await new Promise((resolve) => setTimeout(resolve, 300));
-  const user = Users.find((u) => u.login == login);
-  if (user && user?.password === password) {
-    return user.token;
+  const user = await axios.get(`${API}/users?login=` + login);
+  if (user.status == 200 && password === user.data[0].password) {
+    return user.data[0].token;
   } else {
     return "Error";
   }
 }
 export async function sendUser(token: string) {
-  await new Promise((resolve) => setTimeout(resolve, 300));
-  const user = Users.find((u) => u.token == token);
-  if (user) {
-    return user;
+  const user = await axios.get(`${API}/users?token=` + token);
+  if (user.status == 200) {
+    return { login: user.data[0].login, name: user.data[0].name };
   } else {
     return "Error";
   }

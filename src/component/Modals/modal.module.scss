@@ -1,0 +1,71 @@
+.modal_mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+.modal_mask.modal_show {
+  opacity: 1;
+}
+
+.modal_show .modal {
+  transform: scale(1);
+  opacity: 1;
+}
+.modal_mask.modal_hide {
+  opacity: 0;
+}
+.modalBody {
+  flex: 1;
+  width: 100%;
+  
+}
+.modal {
+  border-radius: 10px;
+  transform: scale(0.4);
+  opacity: 0;
+  transition: all 0.3s ease;
+  position: relative;
+  width: 90vw;
+  max-width: 520px;
+  padding: 24px;
+  max-height: 85vh;
+  min-height: 250px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+.modalCloseButton {
+  cursor: pointer;
+
+  position: absolute;
+  border: none;
+  background-color: transparent;
+  right: 0px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+.modalHeader {
+  position: relative;
+  width: 100%;
+}
+.closeIcon {
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.45);
+}
+.modalCloseButton:hover {
+  background-color: rgb(238, 238, 238);
+
+  border-radius: 50%;
+}
