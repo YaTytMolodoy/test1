@@ -1,5 +1,5 @@
 import axios from "axios";
-const API = "https://698ef2b0aded595c253348ef.mockapi.io";
+const API = "https://698ef2b0aded595c253348ef.mockapi.io"; // Я засунул сюда, в реалных проектах всегда данные с API нужно сувать в ENV это я понимаю
 export async function authUserRp(
   login: string,
   password: string,
@@ -45,7 +45,7 @@ export async function getUserRp(token: string) {
   }
 }
 
-/// Все что ниже должно происходить со стороны backend и пароли хранятся на сервере
+/// Все что ниже должно происходить со стороны backend и пароли хранятся на сервере, подумал так лучше чем MSW, но если нужно ином варианте, напишите,
 export async function signInLoginPassword(login: string, password: string) {
   const user = await axios.get(`${API}/users?login=` + login);
   if (user.status == 200 && password === user.data[0].password) {
